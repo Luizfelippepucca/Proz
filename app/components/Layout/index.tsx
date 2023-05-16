@@ -9,8 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="container">
       <Header />
-      <main>{children}</main>
-      <footer>ola rodape</footer>
+      <main className="mainContent"> {children}</main>
     </div>
   );
 };
