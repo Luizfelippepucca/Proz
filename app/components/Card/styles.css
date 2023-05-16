@@ -1,0 +1,53 @@
+.wrapperCard {
+  width: 368px;
+  height: 267px;
+  background-color: var(--color-primary);
+  padding: 16px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-secondary);
+  border-radius: 8px;
+}
+
+.headerCard {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 0px 16px;
+}
+
+.wrapperTitleMessage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.wrapperTitleMessage p {
+  font-size: 16px;
+  color: var(--color-tertiary);
+  opacity: 60%;
+  font-weight: 700;
+}
+.wrapperTitleMessage span {
+  font-size: 14px;
+  color: var(--color-tertiary);
+  opacity: 60%;
+  font-weight: 400;
+}
+
+.bodyCard {
+  width: 100%;
+  padding: 10px 16px;
+}
+
+.footerCard {
+  width: 100%;
+  height: 70px;
+  padding: 0px 10px;
+  border-top: 2px solid var(--color-divider);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
