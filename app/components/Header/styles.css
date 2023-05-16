@@ -1,14 +1,21 @@
+.headercontainer {
+  width: 100%;
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow-primary);
+  position: fixed;
+  z-index: 5;
+}
 .header {
   width: 100%;
+  max-width: 1366px;
   height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--bg-primary);
   padding: 10px 40px;
-  box-shadow: var(--shadow-primary);
-  position: fixed;
   font-size: "Roboto";
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .headerLeft {
