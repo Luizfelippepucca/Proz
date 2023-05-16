@@ -1,0 +1,58 @@
+.header {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-primary);
+  padding: 10px 40px;
+  box-shadow: var(--shadow-primary);
+  position: fixed;
+  font-size: "Roboto";
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  justify-content: space-around;
+  position: relative;
+}
+
+.notification {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-notification);
+  position: absolute;
+  left: 24px;
+  top: 4px;
+}
+.wrapperPerfilImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapperPerfinInfos {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfilName {
+  font-weight: 300;
+  font-size: 16;
+  color: var(--color-primary);
+}
+
+.perfilProfession {
+  font-weight: 700;
+  font-size: 14;
+  color: var(--color-secondary);
+}
