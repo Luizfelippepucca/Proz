@@ -1,0 +1,14 @@
+.btn {
+  border: 1px solid var(--bg-primary);
+  outline: none;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--bg-primary);
+  letter-spacing: 0.46px;
+}

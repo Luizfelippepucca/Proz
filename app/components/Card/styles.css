@@ -1,6 +1,6 @@
 .wrapperCard {
   width: 368px;
-  height: 267px;
+  height: auto;
   background-color: var(--color-primary);
   padding: 16px 0px;
   display: flex;
@@ -15,8 +15,8 @@
   width: 100%;
   display: flex;
   align-items: flex-start;
-  justify-content: space-evenly;
-  padding: 0px 16px;
+  justify-content: space-between;
+  padding: 0px 10px;
 }
 
 .wrapperTitleMessage {
@@ -36,18 +36,58 @@
   opacity: 60%;
   font-weight: 400;
 }
+@keyframes expand {
+  from {
+    height: 80px;
+  }
+
+  to {
+    height: 250px;
+  }
+}
+
+@keyframes notExpand {
+  from {
+    height: 250px;
+  }
+
+  to {
+    height: 80px;
+  }
+}
 
 .bodyCard {
   width: 100%;
   padding: 10px 16px;
+  height: 80px;
+  overflow: hidden;
+  animation: notExpand 0.5s ease;
+}
+
+.bodyCardOpened {
+  width: 100%;
+  padding: 10px 16px;
+  height: 250px;
+  animation: expand 1s ease;
+}
+.bodyCard p,
+.bodyCardOpened p {
+  font-size: 14px;
+  color: var(--color-tertiary);
+  opacity: 60%;
+  font-weight: 700;
+  text-align: left;
+  margin-top: 8px;
 }
 
 .footerCard {
   width: 100%;
-  height: 70px;
-  padding: 0px 10px;
+  height: 50px;
+  min-height: 50px;
+  padding-top: 10px;
   border-top: 2px solid var(--color-divider);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
