@@ -1,12 +1,14 @@
+"use client";
 import "./styles.css";
 
 interface ButtonProps {
   click: () => void;
+  text: string;
 }
-const Button = ({ click }: ButtonProps) => {
+const Button = ({ click, text }: ButtonProps) => {
   return (
-    <button className="btn" onClick={click}>
-      Ler mensagem
+    <button className="btn" onClick={() => click()}>
+      {text}
     </button>
   );
 };

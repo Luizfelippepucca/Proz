@@ -1,6 +1,6 @@
 .wrapperCard {
   width: 368px;
-  height: auto;
+  height: 267px;
   background-color: var(--color-primary);
   padding: 16px 0px;
   display: flex;
@@ -9,6 +9,7 @@
   justify-content: space-between;
   box-shadow: var(--shadow-secondary);
   border-radius: 8px;
+  transition: all 0.5s ease;
 }
 
 .headerCard {
@@ -36,54 +37,27 @@
   opacity: 60%;
   font-weight: 400;
 }
-@keyframes expand {
-  from {
-    height: 80px;
-  }
-
-  to {
-    height: 250px;
-  }
-}
-
-@keyframes notExpand {
-  from {
-    height: 250px;
-  }
-
-  to {
-    height: 80px;
-  }
-}
 
 .bodyCard {
   width: 100%;
   padding: 10px 16px;
-  height: 80px;
   overflow: hidden;
-  animation: notExpand 0.5s ease;
+  flex: 1;
 }
 
-.bodyCardOpened {
-  width: 100%;
-  padding: 10px 16px;
-  height: 250px;
-  animation: expand 1s ease;
-}
-.bodyCard p,
-.bodyCardOpened p {
+.bodyCard p {
   font-size: 14px;
   color: var(--color-tertiary);
   opacity: 60%;
   font-weight: 700;
   text-align: left;
-  margin-top: 8px;
+  margin-top: 22px;
 }
 
 .footerCard {
   width: 100%;
-  height: 50px;
-  min-height: 50px;
+  height: 60px;
+  min-height: 60px;
   padding-top: 10px;
   border-top: 2px solid var(--color-divider);
   display: flex;
