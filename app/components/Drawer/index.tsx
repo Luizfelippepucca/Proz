@@ -9,26 +9,11 @@ import { useEffect, useState } from "react";
 
 interface DrawerProps {
   list: CardList[];
+  close: () => void;
+  read: (id: number) => void;
 }
-const Drawer = ({ list }: DrawerProps) => {
+const Drawer = ({ list, close, read }: DrawerProps) => {
   const [notification, setNotification] = useState<CardList[]>([]);
-  const teste = false;
-
-  const handleReadNotification = (id: number) => {
-    console.log("clicou");
-    let clone = [...notification];
-    let newlistClone = clone.map((item) => {
-      if (item.id === id) {
-        if (!item.opened) {
-          return { ...item, opened: true, status: "old", read: true };
-        }
-        return { ...item, opened: false };
-      }
-      return { ...item, opened: false };
-    });
-    console.log(newlistClone);
-    setNotification(newlistClone);
-  };
 
   useEffect(() => {
     let clone = [...list];
@@ -43,7 +28,7 @@ const Drawer = ({ list }: DrawerProps) => {
         {notification.map((item, i) => (
           <div
             className="notificationItem"
-            onClick={() => handleReadNotification(item.id)}
+            onClick={() => read(item.id)}
             key={i}
             style={{ height: item.opened ? 200 : 50 }}
           >
@@ -70,14 +55,14 @@ const Drawer = ({ list }: DrawerProps) => {
         ))}
 
         <div className="footerDrawer">
-          <Button text="fechar" click={() => console.log("fechou")} />
+          <Button text="fechar" click={close} />
         </div>
       </div>
       <div style={{ position: "absolute", right: 10, zIndex: 3 }}>
         <Image
           src={IconClose}
           alt="fechar"
-          onClick={() => console.log("fechou")}
+          onClick={close}
           style={{ cursor: "pointer" }}
         />
       </div>

@@ -82,6 +82,8 @@ const noticationData = [
 
 export default function Home() {
   const [listCard, setListCard] = useState<CardList[]>([]);
+  const [listNotification, setListNotification] = useState<CardList[]>([]);
+  const [openDrawer, setOpenDrawer] = useState<boolean>(false);
 
   const handleOpenCard = (id: number) => {
     let clone = [...listCard];
@@ -96,21 +98,53 @@ export default function Home() {
       }
       return { ...item, opened: false };
     });
-
+    setListNotification(newList);
     setListCard(newList);
   };
 
-  const handleOpenNotification = () => {
-    console.log("abriu");
+  const handleReadNotification = (id: number) => {
+    let clone = [...listNotification];
+    let newlistClone = clone.map((item) => {
+      if (item.id === id) {
+        if (!item.opened) {
+          return { ...item, opened: true };
+        }
+
+        return { ...item, opened: false, status: "old", read: true };
+      }
+      return { ...item, opened: false };
+    });
+
+    setListNotification(newlistClone);
+    let newlistCard = newlistClone.map((item) => {
+      return { ...item, opened: false };
+    });
+    setListCard(newlistCard);
+  };
+
+  const handleToggleNotification = () => {
+    setOpenDrawer(!openDrawer);
   };
 
   useEffect(() => {
     setListCard(noticationData);
+    setListNotification(noticationData);
   }, []);
+
+  // useEffect(() => {
+  //   setListNotification(listCard);
+  // }, [listCard]);
+
   return (
     <Fragment>
-      <Drawer list={listCard} />
-      <Layout click={handleOpenNotification}>
+      {openDrawer && (
+        <Drawer
+          list={listNotification}
+          close={handleToggleNotification}
+          read={handleReadNotification}
+        />
+      )}
+      <Layout click={handleToggleNotification}>
         <div className="content">
           <h1 className="title">Notificações</h1>
           <div className="divider"> </div>

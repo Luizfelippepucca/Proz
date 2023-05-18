@@ -13,6 +13,7 @@ interface CardProps {
   date: string;
   content: string;
   status: string;
+
   click: (id: number) => void;
 }
 const Card = ({
