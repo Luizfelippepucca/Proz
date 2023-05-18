@@ -5,80 +5,8 @@ import EmptyState from "./components/EmptyState/indext";
 import Layout from "./components/Layout";
 import "./page.css";
 import Drawer from "./components/Drawer";
-
-export interface CardList {
-  id: number;
-  opened: boolean;
-  title: string;
-  hour: string;
-  date: string;
-  content: string;
-  status: string;
-  read?: boolean;
-}
-
-const noticationData = [
-  {
-    id: 1,
-    opened: false,
-    title: "Proz | Comunidado sobre nova unidade",
-    hour: "19:33",
-    date: "31/03/2022",
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-    status: "new",
-  },
-  {
-    id: 2,
-    opened: false,
-    title: "Proz | Comunidado sobre nova unidade",
-    hour: "19:33",
-    date: "31/03/2022",
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-    status: "new",
-  },
-  {
-    id: 3,
-    opened: false,
-    title: "Proz | Comunidado sobre nova unidade",
-    hour: "19:33",
-    date: "31/03/2022",
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-    status: "new",
-  },
-  {
-    id: 4,
-    opened: false,
-    title: "Proz | Comunidado sobre nova unidade",
-    hour: "19:33",
-    date: "31/03/2022",
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-    status: "old",
-  },
-  {
-    id: 5,
-    opened: false,
-    title: "Proz | Comunidado sobre nova unidade",
-    hour: "19:33",
-    date: "31/03/2022",
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-    status: "old",
-  },
-  {
-    id: 6,
-    opened: false,
-    title: "Proz | Comunidado sobre nova unidade",
-    hour: "19:33",
-    date: "31/03/2022",
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-    status: "old",
-  },
-];
+import { CardList } from "./types";
+import { noticationData } from "./constants";
 
 export default function Home() {
   const [listCard, setListCard] = useState<CardList[]>([]);

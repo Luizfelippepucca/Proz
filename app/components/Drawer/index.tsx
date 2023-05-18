@@ -4,14 +4,10 @@ import IconClose from "../../assets/Close.svg";
 import IconMessage from "../../assets/Email.svg";
 import "./styles.css";
 import Button from "../Button";
-import { CardList } from "@/app/page";
 import { useEffect, useState } from "react";
+import { DrawerProps } from "./types";
+import { CardList } from "@/app/types";
 
-interface DrawerProps {
-  list: CardList[];
-  close: () => void;
-  read: (id: number) => void;
-}
 const Drawer = ({ list, close, read }: DrawerProps) => {
   const [notification, setNotification] = useState<CardList[]>([]);
 
@@ -26,7 +22,11 @@ const Drawer = ({ list, close, read }: DrawerProps) => {
     return (
       <div
         className="wrapperDrawer"
-        style={{ alignItems: "center", justifyContent: "space-around" }}
+        style={{
+          alignItems: "center",
+          justifyContent: "space-around",
+          width: 313,
+        }}
       >
         <Image src={IconMessage} alt="mensagem" style={{ marginRight: 4 }} />
         Não há nenhuma nova notificação

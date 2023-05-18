@@ -4,18 +4,8 @@ import Image from "next/image";
 import IconMail from "../../assets/Email.svg";
 import IconClose from "../../assets/Close.svg";
 import Button from "../Button";
+import { CardProps } from "./types";
 
-interface CardProps {
-  id: number;
-  opened: boolean;
-  title: string;
-  hour: string;
-  date: string;
-  content: string;
-  status: string;
-
-  click: (id: number) => void;
-}
 const Card = ({
   id,
   content,

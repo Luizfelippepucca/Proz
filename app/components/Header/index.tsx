@@ -4,17 +4,9 @@ import PerfilImage from "../../assets/Avatar.png";
 import MenuIcon from "../../assets/Menu.svg";
 import LogoIcon from "../../assets/logo.svg";
 import NotificationIcon from "../../assets/CircleNotifications.svg";
-import { useEffect } from "react";
-
-interface HeaderProps {
-  click: () => void;
-  notifications: number;
-}
+import { HeaderProps } from "./types";
 
 const Header = ({ click, notifications }: HeaderProps) => {
-  useEffect(() => {
-    console.log(notifications);
-  }, [notifications]);
   return (
     <div className="headercontainer">
       <header className="header">
