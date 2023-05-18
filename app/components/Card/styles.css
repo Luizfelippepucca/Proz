@@ -65,3 +65,9 @@
   justify-content: center;
   margin-top: 10px;
 }
+
+@media (max-width: 400px) {
+  .bodyCard p {
+    font-size: 12px;
+  }
+}

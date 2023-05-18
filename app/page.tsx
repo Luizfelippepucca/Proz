@@ -93,7 +93,7 @@ export default function Home() {
           <div className="divider"> </div>
           {/* <EmptyState /> */}
 
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
+          <div className="areaCards">
             {listCard.map((item) => (
               <Card
                 key={item.id}
