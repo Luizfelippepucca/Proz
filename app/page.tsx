@@ -83,6 +83,7 @@ const noticationData = [
 export default function Home() {
   const [listCard, setListCard] = useState<CardList[]>([]);
   const [listNotification, setListNotification] = useState<CardList[]>([]);
+  const [numberOfNotifications, setNumberOfNotifications] = useState<number>(0);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
 
   const handleOpenCard = (id: number) => {
@@ -131,9 +132,20 @@ export default function Home() {
     setListNotification(noticationData);
   }, []);
 
+  useEffect(() => {
+    setNumberOfNotifications(
+      listCard.filter((item) => item.status === "new").length
+    );
+  }, [listCard]);
+
   // useEffect(() => {
-  //   setListNotification(listCard);
-  // }, [listCard]);
+  //   setInterval(() => {
+  //     if (listNotification.length <= 0) {
+  //       let teste = listCard.filter((item) => item.status === "new");
+  //       setListCard(teste);
+  //     }
+  //   }, 5000);
+  // }, [listNotification]);
 
   return (
     <Fragment>
@@ -144,7 +156,10 @@ export default function Home() {
           read={handleReadNotification}
         />
       )}
-      <Layout click={handleToggleNotification}>
+      <Layout
+        click={handleToggleNotification}
+        notifications={numberOfNotifications}
+      >
         <div className="content">
           <h1 className="title">Notificações</h1>
           <div className="divider"> </div>

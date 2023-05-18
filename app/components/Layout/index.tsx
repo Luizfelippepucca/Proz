@@ -5,11 +5,12 @@ import Header from "../Header";
 interface LayoutProps {
   children: ReactElement;
   click: () => void;
+  notifications: number;
 }
-const Layout = ({ children, click }: LayoutProps) => {
+const Layout = ({ notifications, children, click }: LayoutProps) => {
   return (
     <div className="container">
-      <Header click={click} />
+      <Header click={click} notifications={notifications} />
       <main className="mainContent"> {children}</main>
     </div>
   );

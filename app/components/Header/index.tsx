@@ -4,12 +4,17 @@ import PerfilImage from "../../assets/Avatar.png";
 import MenuIcon from "../../assets/Menu.svg";
 import LogoIcon from "../../assets/logo.svg";
 import NotificationIcon from "../../assets/CircleNotifications.svg";
+import { useEffect } from "react";
 
 interface HeaderProps {
   click: () => void;
+  notifications: number;
 }
 
-const Header = ({ click }: HeaderProps) => {
+const Header = ({ click, notifications }: HeaderProps) => {
+  useEffect(() => {
+    console.log(notifications);
+  }, [notifications]);
   return (
     <div className="headercontainer">
       <header className="header">
@@ -25,7 +30,7 @@ const Header = ({ click }: HeaderProps) => {
         </div>
         <div className="headerRight">
           <div onClick={click} style={{ cursor: "pointer" }}>
-            <div className="notification"></div>
+            {notifications > 0 && <div className="notification"></div>}
             <Image
               width={24}
               height={24}

@@ -23,7 +23,6 @@
   display: flex;
   flex-direction: column;
   height: auto;
-  /* background-color: red; */
   position: relative;
 }
 
@@ -31,14 +30,26 @@
   width: 335px;
   height: auto;
   margin-left: 12px;
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   overflow-y: hidden;
-  /* background-color: aqua; */
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.noticationContent {
+  width: 100%;
+  margin-top: 12px;
+}
+.noticationContent::-webkit-scrollbar {
+  width: 4px;
+}
+
+.noticationContent::-webkit-scrollbar-thumb {
+  background: var(--bg-primary);
+  border-radius: 4px;
 }
 .notificationItem:first-child {
   margin-top: 0px;

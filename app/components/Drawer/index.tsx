@@ -22,6 +22,18 @@ const Drawer = ({ list, close, read }: DrawerProps) => {
     setNotification(newList);
   }, [list]);
 
+  if (notification.length <= 0) {
+    return (
+      <div
+        className="wrapperDrawer"
+        style={{ alignItems: "center", justifyContent: "space-around" }}
+      >
+        <Image src={IconMessage} alt="mensagem" style={{ marginRight: 4 }} />
+        Não há nenhuma nova notificação
+      </div>
+    );
+  }
+
   return (
     <div className="wrapperDrawer">
       <div className="notificationArea">
@@ -46,7 +58,10 @@ const Drawer = ({ list, close, read }: DrawerProps) => {
                 </span>
               </div>
             </div>
-            <div style={{ width: "100%", marginTop: 12, overflow: "auto" }}>
+            <div
+              className="noticationContent"
+              style={{ overflowY: item.opened ? "scroll" : "hidden" }}
+            >
               <span>{item.content}</span>
               <span>{item.content}</span>
               <span>{item.content}</span>
