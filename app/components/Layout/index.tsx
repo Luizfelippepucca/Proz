@@ -4,11 +4,12 @@ import Header from "../Header";
 
 interface LayoutProps {
   children: ReactElement;
+  click: () => void;
 }
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, click }: LayoutProps) => {
   return (
     <div className="container">
-      <Header />
+      <Header click={click} />
       <main className="mainContent"> {children}</main>
     </div>
   );

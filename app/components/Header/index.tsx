@@ -5,7 +5,11 @@ import MenuIcon from "../../assets/Menu.svg";
 import LogoIcon from "../../assets/logo.svg";
 import NotificationIcon from "../../assets/CircleNotifications.svg";
 
-const Header = () => {
+interface HeaderProps {
+  click: () => void;
+}
+
+const Header = ({ click }: HeaderProps) => {
   return (
     <div className="headercontainer">
       <header className="header">
@@ -20,13 +24,15 @@ const Header = () => {
           />
         </div>
         <div className="headerRight">
-          <div className="notification"></div>
-          <Image
-            width={24}
-            height={24}
-            src={NotificationIcon}
-            alt="notificações"
-          />
+          <div onClick={click} style={{ cursor: "pointer" }}>
+            <div className="notification"></div>
+            <Image
+              width={24}
+              height={24}
+              src={NotificationIcon}
+              alt="notificações"
+            />
+          </div>
           <div className="wrapperPerfilImage">
             <Image
               width={40}

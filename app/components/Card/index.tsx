@@ -12,14 +12,31 @@ interface CardProps {
   hour: string;
   date: string;
   content: string;
+  status: string;
   click: (id: number) => void;
 }
-const Card = ({ id, content, date, hour, opened, title, click }: CardProps) => {
+const Card = ({
+  id,
+  content,
+  date,
+  hour,
+  opened,
+  title,
+  status,
+  click,
+}: CardProps) => {
   const handleTetse = () => {
     click(id);
   };
   return (
-    <div className="wrapperCard" style={{ height: !opened ? 267 : 467 }}>
+    <div
+      className="wrapperCard"
+      style={{
+        height: !opened ? 267 : 467,
+        borderBottom:
+          status !== "old" ? "1px solid var(--color-border-primary)" : 0,
+      }}
+    >
       <div className="headerCard">
         <div style={{ width: 40 }}>
           <Image src={IconMail} alt="mensagem" />
