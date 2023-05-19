@@ -7,4 +7,5 @@ export interface CardProps {
   content: string;
   status: string;
   click: (id: number) => void;
+  deleteCard: () => void;
 }

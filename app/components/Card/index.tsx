@@ -15,6 +15,7 @@ const Card = ({
   title,
   status,
   click,
+  deleteCard,
 }: CardProps) => {
   const handleTetse = () => {
     click(id);
@@ -39,7 +40,7 @@ const Card = ({
           </span>
         </div>
         <div style={{ width: 30 }}>
-          <Image src={IconClose} alt="excluir mensagem" />
+          <Image src={IconClose} alt="excluir mensagem" onClick={deleteCard} />
         </div>
       </div>
       <div className="bodyCard">

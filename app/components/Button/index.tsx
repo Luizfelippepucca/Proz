@@ -7,7 +7,13 @@ interface ButtonProps {
 }
 const Button = ({ click, text }: ButtonProps) => {
   return (
-    <button className="btn" onClick={() => click()}>
+    <button
+      className="btn"
+      onClick={() => click()}
+      style={{
+        width: text === "Não" ? 200 : "auto",
+      }}
+    >
       {text}
     </button>
   );

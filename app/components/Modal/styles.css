@@ -1,0 +1,53 @@
+.overlay {
+  background-color: #00000060;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerModal {
+  width: 100%;
+  max-width: 496px;
+  height: 272px;
+  background-color: var(--color-primary);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: var(--shadow-secondary);
+  border-radius: 8px;
+  transition: all 0.5s ease;
+  margin: 0px 12px;
+}
+
+.deleteMessage {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-tertiary);
+}
+.questionMessgae {
+  font-size: 16px;
+  font-weight: 300;
+  color: #00000067;
+}
+
+.btnDelete {
+  width: 200px;
+  border: 0;
+  outline: none;
+  padding: 11px 20px;
+  text-align: center;
+  background-color: #f44336;
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 0.46px;
+}
